@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <!-- 선형 그라데이션 정의 -->
+  <defs>
+    <linearGradient id="strokeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="50%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+    <linearGradient id="fillGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#EC4899" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 인피니티 심볼 경로 -->
+  <path d="M800,450 C800,330 890,200 1050,200 C1210,200 1300,330 1300,450 C1300,570 1210,700 1050,700 C890,700 800,570 800,450 Z M800,450 C800,570 710,700 550,700 C390,700 300,570 300,450 C300,330 390,200 550,200 C710,200 800,330 800,450 Z" 
+  fill="url(#fillGradient)" 
+  stroke="url(#strokeGradient)" 
+  stroke-width="45" 
+  stroke-linecap="round" 
+  stroke-linejoin="round"/>
+</svg>
