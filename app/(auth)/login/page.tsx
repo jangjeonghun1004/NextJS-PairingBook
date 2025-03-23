@@ -81,7 +81,7 @@ export default function LoginPage(): JSX.Element {
                 </div>
 
                 <div className="text-center mt-3">
-                  <p>Don't have an account? <Link href="/signup">Sign up</Link></p>
+                  <p>Don`&apos;`t have an account? <Link href="/signup">Sign up</Link></p>
                 </div>
               </form>
 

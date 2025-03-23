@@ -2,15 +2,8 @@
 
 import Link from "next/link";
 import AnimatedBackground from "../../ui/animatedBackground";
-import { useState, useEffect } from "react";
 
 export default function IntroSection() {
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    setVisible(true)
-  }, [])
-
   return (
     <>
       {/* Enhanced background with larger, more dynamic elements */}
