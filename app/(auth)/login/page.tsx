@@ -2,6 +2,7 @@
 import { useState, JSX } from "react";
 import ButtonSubmit from "@/app/components/ui/ButtonSubmit";
 import { signIn } from "next-auth/react";
+import Link from "next/link";
 
 /**
  * 로그인 페이지 컴포넌트
@@ -49,37 +50,45 @@ export default function LoginPage(): JSX.Element {
   };
 
   return (
-    <section className="contact section" style={{ padding: '0px' }}>
-      <div className="d-flex justify-content-center align-items-center vh-100">
-        <div className="col-lg-4">
-          <div className="php-email-form">
+    <>
+      <section className="contact section" style={{ padding: '0px' }}>
+        <div className="container min-vh-100 d-flex align-items-center justify-content-center">
+          <div className="row w-100">
+            <div className="col-12 col-md-8 col-lg-5 mx-auto">
 
-            <div className="col-md-12 text-center container-center">
-              <img src="/assets/img/logo.svg" className="logo-login" />
-              <h1>로그인</h1><br />
+              <form action={handleSubmit} className="php-email-form p-3">
+                <div className="col-md-12 text-center container-center">
+                  <img src="/assets/img/logo.svg" className="logo-login" />
+                  <h1>로그인</h1><br />
+                </div>
+
+                <div className="mb-3">
+                  <input type="email" className="form-control" name="email" placeholder="Email" />
+                </div>
+
+                <div className="mb-3">
+                  <p style={{ textAlign: 'right', fontSize: '12px', marginBottom: '3px' }}>
+                    Forgot your password? <Link href="/forgot-password">Reset password</Link>
+                  </p>
+                  <input type="password" className="form-control" name="password" placeholder="Password" />
+                </div>
+
+                <div className="text-center mt-4">
+                  {error && <div className="alert alert-danger">{error}</div>}
+                  {token && <div className="alert alert-success">로그인 성공 및 JWT 토큰이 설정되었습니다.</div>}
+
+                  <ButtonSubmit text="로그인" />
+                </div>
+
+                <div className="text-center mt-3">
+                  <p>Don't have an account? <Link href="/signup">Sign up</Link></p>
+                </div>
+              </form>
+
             </div>
-
-            <form action={handleSubmit} className="row gy-4">
-              <div className="col-md-12">
-                <input type="email" className="form-control" name="email" placeholder="Email" />
-              </div>
-
-              <div className="col-md-12">
-                <input type="password" className="form-control" name="password" placeholder="Password" />
-              </div>
-
-              <div className="col-md-12 text-center">
-                {error && <div className="error-message">{error}</div>}
-                {token && <div className="sent-message">로그인 성공 및 JWT 토큰이 설정되었습니다.</div>}
-
-                <ButtonSubmit text="로그인" />
-              </div>
-            </form>
-
           </div>
         </div>
-      </div>
-
-    </section>
+      </section>
+    </>
   );
 }

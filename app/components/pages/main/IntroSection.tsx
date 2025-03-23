@@ -1,22 +1,39 @@
 'use client';
 
+import Link from "next/link";
+import AnimatedBackground from "../../ui/animatedBackground";
+import { useState, useEffect } from "react";
+
 export default function IntroSection() {
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    setVisible(true)
+  }, [])
+
   return (
-    <section id="intro" className="hero section dark-background">
+    <>
+      {/* Enhanced background with larger, more dynamic elements */}
+      <AnimatedBackground particleCount={60} elementCount={20} elements={["♥", "♡", "♥", "♡"]} />
 
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" />
+      <section id="intro" className="hero section dark-background">
+        {/* <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" /> */}
+        <div className="container d-flex flex-column align-items-center">
+          <h2 data-aos="zoom-in" data-aos-easing="ease-in-sine" data-aos-duration="800"
+            className="drop-shadow-md"
+            style={{ color: 'oklch(.586 .253 17.585)' }}>
+            LOVE ∞ STORY</h2>
 
-      <div className="container d-flex flex-column align-items-center">
-        <h2 data-aos="fade-up" data-aos-delay="100">PLAN. LAUNCH. GROW.</h2>
-        <p data-aos="fade-up" data-aos-delay="200">We are team of talented designers making websites with Bootstrap</p>
-        <div className="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
-          <a href="#about" className="btn-get-started">Get Started</a>
-          <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" className="glightbox btn-watch-video d-flex align-items-center">
-            <i className="bi bi-play-circle"></i><span>Watch Video</span>
-          </a>
+          <p data-aos="zoom-in" data-aos-easing="ease-in-sine" data-aos-duration="1600"
+            className="drop-shadow-sm"
+            style={{ textAlign: 'center', color: 'oklch(.455 .188 13.697)' }}>
+            당신의 이야기 속에서 운명적인 만남이 피어납니다.<br />지금 그 이야기를 펼쳐보세요.</p>
+
+          <div className="d-flex mt-4" data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-duration="1000" data-aos-delay="1800">
+            <Link href={'/profile'} className="btn-get-started">시작 하기</Link>
+          </div>
         </div>
-      </div>
-
-    </section>
+      </section>
+    </>
   );
 }

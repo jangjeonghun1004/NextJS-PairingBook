@@ -1001,7 +1001,8 @@ section, .section-sub {
 
 .hero h2 {
   margin: 0;
-  font-size: 48px;
+  /* font-size: 48px; */
+  font-size: 70px;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -1009,7 +1010,8 @@ section, .section-sub {
 .hero p {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin: 10px 0 0 0;
-  font-size: 24px;
+  /* font-size: 24px; */
+  font-size: 20px;
 }
 
 .hero .btn-get-started {
@@ -1055,7 +1057,7 @@ section, .section-sub {
 
 @media (max-width: 768px) {
   .hero h2 {
-    font-size: 32px;
+    font-size: 45px;
   }
 
   .hero p {
